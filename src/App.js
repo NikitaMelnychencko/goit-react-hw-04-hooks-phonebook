@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import useLocalStorage from './hooks/useLocalStorage.js';
 import Section from 'components/Section/Section';
 import Search from 'components/Search/Search';
 import Contacts from 'components/Contacts/Contacts';
@@ -9,15 +10,9 @@ import '@pnotify/core/dist/BrightTheme.css';
 import { nanoid } from 'nanoid';
 
 const App = () => {
-  const [contacts, setContacts] = useState(
-    () => JSON.parse(localStorage.getItem('contacts')) ?? [],
-  );
+  const [contacts, setContacts] = useLocalStorage('contacts', []);
   const [filter, setFilter] = useState('');
 
-  useEffect(
-    () => localStorage.setItem('contacts', JSON.stringify(contacts)),
-    [contacts],
-  );
   const formSubmitHandler = data => {
     let isUniqueName = contacts.find(elem => elem.name.includes(data.name));
 
