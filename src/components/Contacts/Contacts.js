@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import s from './Contacts.module.scss';
 import Contact from './Contact';
 
 const Contacts = ({ contacts, deleteContact }) => {
