@@ -2,7 +2,7 @@
   "name": "goit-react-hw-04-phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://NikitaMelnychencko.github.io/goit-react-hw-04-phonebook",
+  "homepage": "https://NikitaMelnychencko.github.io/goit-react-hw-04-hooks-phonebook",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",
