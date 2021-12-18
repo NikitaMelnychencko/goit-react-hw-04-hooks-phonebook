@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import useLocalStorage from './hooks/useLocalStorage.js';
 import Section from 'components/Section/Section';
 import Search from 'components/Search/Search';
@@ -35,14 +35,13 @@ const App = () => {
       contacts.filter(contact => contact.id !== contactId),
     );
   };
-  const filterContacts = () => {
+  const filterContact = useMemo(() => {
     const normalizeFilter = filter.toLowerCase();
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizeFilter),
     );
-  };
+  }, [contacts, filter]);
 
-  const filterContact = filterContacts();
   return (
     <>
       <Section title={'Phonebook'}>
